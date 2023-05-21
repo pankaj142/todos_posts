@@ -7,9 +7,14 @@ app.use(json());
 
 const PORT = 3000;
 
-app.get("/", (req, res)=>{
+app.get("/health", (req, res)=>{
     res.sendStatus(200)
 })
+
+app.get("/api/users/currentuser", (req, res)=>{
+    res.send("Hello there...")
+})
+
 app.listen(3000, ()=>{
     console.log(`Auth service is running on port ${PORT}`)
 })
